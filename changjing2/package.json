@@ -1,0 +1,19 @@
+{
+  "name": "changjing2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "debug": "webpack",
+    "build": "webpack --progress -p"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.6.7"
+  },
+  "devDependencies": {
+    "webpack": "^3.8.1"
+  }
+}
