@@ -6,7 +6,7 @@
 // require('./controller')
 // require('./serverce')
 
-
+import angular from 'angular'
 import controllerModule from './controller'
 import service from './serverce'
 
