@@ -7,8 +7,8 @@ const extractTextPlugin = require('extract-text-webpack-plugin')
 module.exports = {
 	entry: './app.js',
 	output: {
-		path: path.resolve(__dirname, '/'),
-		filename: 'main.js'
+		path: path.resolve(__dirname, './dist'),
+		filename: 'js/main.js'
 	},
 	module: {
 		loaders: [
@@ -23,7 +23,11 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loader: extractTextPlugin.extract(['style-loader', 'css-loader'])
+        exclude: [
+          path.resolve(__dirname, 'node_modules')
+        ],
+        // loader: extractTextPlugin.extract(['css-loader'])
+        loader: 'style-loader!css-loader'
       }
 		]
   },
@@ -32,9 +36,11 @@ module.exports = {
       filename: 'index.html',
       template: 'index.html'
     }),
-    new extractTextPlugin('[name].[hash:8].css')
+    new extractTextPlugin('[hash:8].css'),
+    new webpack.HotModuleReplacementPlugin()
   ],
   devServer: {
-    contentBase: '/'
+    contentBase: '/',
+    hot: true
   }
 }

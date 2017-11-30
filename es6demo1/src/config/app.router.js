@@ -8,6 +8,9 @@ export default function route($stateProvider, $urlRouterProvider) {
 	$stateProvider.state('login', {
 		url: '/login',
 		template: '<login></login>'
-	})
+	}).state('home', {
+    url: '/home',
+    template: '<home></home>'
+  })
 
 }
